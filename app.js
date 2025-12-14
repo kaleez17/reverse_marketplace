@@ -1,13 +1,7 @@
-// ===============================
-// Reverse Marketplace - Frontend
-// Backend: Render
-// ===============================
-
 const BACKEND_URL = "https://reverse-marketplace-back-end.onrender.com";
 
-// Main search function
-function search() {
-  const input = document.getElementById("query");
+function handleSearch() {
+  const input = document.getElementById("searchInput");
   const query = input.value.trim();
 
   if (!query) {
@@ -18,30 +12,26 @@ function search() {
   setLoading(true);
 
   fetch(`${BACKEND_URL}/search?q=${encodeURIComponent(query)}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Backend error");
-      }
-      return response.json();
+    .then(res => {
+      if (!res.ok) throw new Error("Server error");
+      return res.json();
     })
     .then(data => {
       if (data.redirect) {
-        // Affiliate redirect
         window.location.href = data.redirect;
       } else {
-        alert("No results found. Try a different request.");
+        alert("No results found");
         setLoading(false);
       }
     })
     .catch(() => {
-      alert("Service temporarily unavailable. Please try again.");
+      alert("Something went wrong. Please try again.");
       setLoading(false);
     });
 }
 
-// UI loading state
 function setLoading(state) {
-  const btn = document.getElementById("searchBtn");
+  const btn = document.querySelector("button");
   if (!btn) return;
 
   if (state) {
