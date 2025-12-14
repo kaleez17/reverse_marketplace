@@ -1,18 +1,16 @@
-function search() {
-  const need = document.getElementById("need").value.trim();
-  const category = document.getElementById("category").value;
-  const budget = document.getElementById("budget").value;
+function handleSearch() {
+  const input = document.getElementById("searchInput");
+  const query = input.value.trim();
 
-  if (!need || !budget) {
-    alert("Please describe your need and budget.");
+  if (!query) {
+    alert("Please describe what you are looking for");
     return;
   }
 
-  const params = new URLSearchParams({
-    need,
-    category,
-    budget
-  });
+  const amazonUrl =
+    `${AFFILIATES.amazon.baseUrl}?k=` +
+    encodeURIComponent(query) +
+    `&tag=${AFFILIATES.amazon.tag}`;
 
-  window.location.href = `results.html?${params.toString()}`;
+  window.location.href = amazonUrl;
 }
