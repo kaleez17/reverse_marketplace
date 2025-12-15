@@ -1,34 +1,64 @@
+/* General Reset */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #f4f7f8;
   margin: 0;
   padding: 0;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #0070f3;
+  color: white;
+  padding: 15px 30px;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav h2 {
+  margin: 0;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
+  text-align: center;
 }
-
 .container {
   background: white;
   padding: 40px 60px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  text-align: center;
+  max-width: 600px;
   width: 90%;
-  max-width: 500px;
 }
-
 h1 {
   margin-bottom: 10px;
-  color: #333;
+  color: #0070f3;
 }
-
 p {
-  margin-bottom: 30px;
-  color: #666;
+  margin-bottom: 20px;
+  color: #555;
 }
-
 input[type="text"] {
   width: 100%;
   padding: 12px 15px;
@@ -37,7 +67,6 @@ input[type="text"] {
   margin-bottom: 20px;
   font-size: 16px;
 }
-
 button {
   padding: 12px 20px;
   border: none;
@@ -48,7 +77,60 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
-
 button:hover {
   background: #005bb5;
+}
+#messageBox {
+  margin-top: 15px;
+  font-size: 14px;
+}
+#messageBox.error {
+  color: red;
+}
+#messageBox.info {
+  color: green;
+}
+
+/* Projects Section */
+#projects {
+  padding: 50px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 250px;
+}
+.project-card h3 {
+  color: #0070f3;
+}
+
+/* Contact Section */
+#contact {
+  padding: 40px 20px;
+  text-align: center;
+}
+#contact a {
+  color: #0070f3;
+  text-decoration: none;
+}
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #0070f3;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
