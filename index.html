@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reverse Marketplace</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Reverse Marketplace</h1>
+    <p>Describe what you need and get instant product suggestions!</p>
 
-  <main class="container">
-    <div class="card">
-      <h1>Describe your need</h1>
-      <p class="subtitle">
-        Tell us what you’re looking for and we’ll find the right products for you.
-      </p>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Eg: Gift for 7-year-old who loves dinosaurs"
+    />
 
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Eg: Gift for 7-year-old who loves dinosaurs"
-      />
+    <button onclick="handleSearch()">Find Products</button>
+  </div>
 
-      <button onclick="handleSearch()">Find Products</button>
-
-      <p class="disclaimer">
-        This website contains affiliate links. We may earn a commission at no extra cost to you.
-      </p>
-    </div>
-  </main>
-
-  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
-
