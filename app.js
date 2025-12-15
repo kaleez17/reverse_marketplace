@@ -1,17 +1,14 @@
 // Reverse Marketplace - Frontend-only
 
-// Amazon affiliate tag
 const AMAZON_TAG = "reversemarket-21";
-
-// Flipkart placeholder (add later)
-const FLIPKART_TAG = ""; // Add Flipkart affiliate when ready
+const FLIPKART_TAG = ""; // Future use
 
 function handleSearch() {
   const input = document.getElementById("searchInput");
   const query = input.value.trim();
 
   if (!query) {
-    alert("Please describe what you need!");
+    showMessage("⚠️ Please describe what you need!", "error");
     return;
   }
 
@@ -20,11 +17,10 @@ function handleSearch() {
   // Build Amazon URL
   const amazonUrl = `https://www.amazon.in/s?k=${encodeURIComponent(query)}&tag=${AMAZON_TAG}`;
 
-  // Placeholder for Flipkart logic (future)
-  // if(FLIPKART_TAG) { ... }
+  // Open results in a new tab (better UX)
+  window.open(amazonUrl, "_blank");
 
-  // Redirect instantly
-  window.location.href = amazonUrl;
+  setLoading(false);
 }
 
 function setLoading(state) {
@@ -38,4 +34,12 @@ function setLoading(state) {
     btn.disabled = false;
     btn.innerText = "Find Products";
   }
+}
+
+function showMessage(message, type = "info") {
+  const msgBox = document.getElementById("messageBox");
+  if (!msgBox) return;
+
+  msgBox.innerText = message;
+  msgBox.className = type;
 }
