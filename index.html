@@ -3,22 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reverse Marketplace</title>
+  <title>Kaleswaran | Front-End Developer</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- SEO Meta -->
+  <meta name="description" content="Portfolio of Kaleswaran Irulaiya - Front-End Developer specializing in responsive websites and web apps.">
+  <meta name="keywords" content="HTML, CSS, JavaScript, web developer, Fiverr, portfolio">
 </head>
 <body>
-  <div class="container">
-    <h1>Reverse Marketplace</h1>
-    <p>Describe what you need and get instant product suggestions!</p>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h2>Kaleswaran Irulaiya</h2>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Eg: Gift for 7-year-old who loves dinosaurs"
-    />
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Reverse Marketplace</h1>
+      <p>Describe what you need and get instant product suggestions!</p>
+      <input type="text" id="searchInput" placeholder="Eg: Gift for 7-year-old who loves dinosaurs" />
+      <button onclick="handleSearch()">Find Products</button>
+      <div id="messageBox"></div>
+    </div>
+  </section>
 
-    <button onclick="handleSearch()">Find Products</button>
-  </div>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Reverse Marketplace</h3>
+        <p>A demo app that suggests products based on user input.</p>
+      </div>
+      <div class="project-card">
+        <h3>Appointment Booking</h3>
+        <p>A simple booking system for businesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:kaleeswaran@example.com">kaleeswaran@example.com</a></p>
+    <p>Fiverr: <a href="https://www.fiverr.com/">My Fiverr Profile</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Kaleswaran Irulaiya | Front-End Developer</p>
+  </footer>
 
   <script src="app.js"></script>
 </body>
